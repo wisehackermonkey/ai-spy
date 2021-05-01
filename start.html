@@ -19,6 +19,12 @@
     font-weight: bold;
   }
 
+  @media only screen and (max-width: 767px) {
+    #robot {
+      width: 100%;
+    }
+  }
+
 </style>
 </head>
 
@@ -31,12 +37,11 @@
 <p style="text-align:center;font-size: 2em; padding-top: 1em;">Welcome to AI Spy: The Scavenger Hunt. We use AI to identify if you find the items on the scavenger list!</p>
 
 <div class="col-12" style="text-align:center;padding:3em;">
-  <img class="img=fluid" src="robotics.png" alt="robot" display: block;>
-  <button type="button" class="btn btn-success" style="background:green;border:none;font-size:2em;">START</button>
+  <img class="img=fluid" id="robot" src="robotics.png" alt="robot">
 </div>
 
-<div style="text-align:center;">
-
+<div style="text-align:center;" class="col-12">
+<button type="button" class="btn btn-success" style="background:green;border:none;font-size:2em;padding:1.5em;">START</button>
 </div>
 
 

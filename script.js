@@ -14,7 +14,13 @@ const current_items = [
   {name:"shoe",show:true},
   ]
 
+// the sound effect for when the user correctly displays the items
 let sound_fx_collect_item = new Audio('tada_1.mp3');
+
+
+// the timer for the game looks like `14 seconds left!` 
+let start_time;
+
 
 // cross off found items 
 let cross_off_item = (item_name) => {
@@ -39,6 +45,8 @@ let cross_off_item = (item_name) => {
   })
   return sucess;
 }
+
+
 
 // Load the image model and setup the webcam
 async function init() {
@@ -95,7 +103,6 @@ async function predict() {
             if(cross_off_item(item_name_found)){
                 sound_fx_collect_item.play();
                 party.confetti(document.getElementById(item_name_found));
-
             }
 
         } else {

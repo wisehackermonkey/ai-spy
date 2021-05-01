@@ -31,8 +31,3 @@ body {
 .btn:hover {
     transform: scale(.9);
 }
-
-
-div.container-fluid {
-  margin: 10px;
-}
