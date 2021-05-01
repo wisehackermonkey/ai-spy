@@ -85,13 +85,16 @@ async function predict() {
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
             "You found a " + prediction[i].className + "!";
+        
+        const item_name_found = prediction[i].className
+
         if (prediction[i].probability.toFixed(2)>0.97){
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
             // this code crosses off all items that the user is displaying
-            if(cross_off_item(classPrediction)){
+            if(cross_off_item(item_name_found)){
                 sound_fx_collect_item.play();
-                party.confetti(document.getElementById(classPrediction));
+                party.confetti(document.getElementById(item_name_found));
 
             }
 
