@@ -8,26 +8,39 @@
   <!-- Bootstrap CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-<script>
 
-let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
-win_sound_fx.play();
-  
-</script>
+
 
 </head>
 
 <body>
   
-  <div class="container-fluid" id="winner" style="margin: auto; text-align: center; padding-top: 9em; background-color: rgb(248, 248, 248);">
+  <div class="container-fluid" id="winner" style="margin: auto; text-align: center; padding-top: 4em; background-color: rgb(248, 248, 248);">
     <div class="row">
-        <div class="col-12 col-lg-6" style="background-color: turquoise; margin: auto; padding: 4em; text-align: center;">
+        <div id="confetti-2" class="col-12 col-lg-6 rounded" style="background-color: turquoise; margin: auto; padding: 2em; text-align: center; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           <img src="/assets/congratulations.png" alt="Congratulations icon" class="img-fluid">
           <h1>You Won!</h1>
-          <img class="img-fluid" src="/assets/trophy.png" alt="trophy icon">
+          <img id="confetti-3"  class="img-fluid" src="/assets/trophy.png" alt="trophy icon">
         </div>
     </div>
 </div>
 
 </body>
+<!--  used for confetti in when the user wins-->
+<!-- https://www.cssscript.com/confetti-animation-party/ -->
+<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js">
+
+
+</script>
+
+<script>
+setInterval(e=>{
+party.confetti(document.getElementById("winner"));
+    party.confetti(document.getElementById("confetti-2"));
+    party.confetti(document.getElementById("confetti-3"));
+},2000)
+let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
+win_sound_fx.play();
+  
+</script>
 </html>

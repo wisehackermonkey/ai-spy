@@ -70,5 +70,15 @@ h1 {
 }
 
 #timer {
-  font-style
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.list-icons {
+  width: 1.2em;
+  margin-right: .8em;
+}
+
+.list-icons img {
+  display: inline;
 }
