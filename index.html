@@ -1,70 +1,32 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HackJam 2021</title>
-  <link rel="icon" href="/assets/magnifying-glass.jpg" type="image/png">
-  
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HackJam 2021</title>
+	<link rel="icon" href="/assets/loupe.png" type="image/png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css" type="text/css" />
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
-
-<style>
-  @font-face {
-  font-family:"Roboto Bold";
-  src: url("Roboto-Bold.ttf") format("truetype");
-}
-  #title {
-    font-family:"Roboto Bold";
-  }
-  .col-12, .container {
-    font-face: "Roboto";
-  }
-
-  .btn a{
-    font-face: "Roboto";
-    font-weight: bold;
-  }
-
-  @media only screen and (max-width: 767px) {
-    #robot {
-      width: 100%;
-    }
-  }
-
-</style>
 </head>
 
 <body>
-<div id="title" style="text-align:center;padding-top:2em;">
-  <div class="row" style="text-align:center;font-size: 3em;"><img class="img-fluid" id="magnifying" src="loupe.png" alt="magnifying glass" style="width: 3em;height:auto;"> AI SPY
+	<div id="title">
+		<div class="row"><img class="img-fluid" id="magnifying" src="/assets/loupe.png" alt="magnifying glass"> AI SPY
   </div>
 </div>
 
 <div class="container">
-<h3 style="text-align:center;font-size: 2em; padding-top: 1em;">Welcome to AI Spy: The Scavenger Hunt. We use AI to identify if you find the items on the scavenger list!</h3>
+<h3>Welcome to AI Spy: The Scavenger Hunt. We use AI to identify if you find the items on the scavenger list!</h3>
 </div>
 
-<div class="col-12" style="text-align:center;padding:3em;">
-  <img class="img-fluid" id="robot" src="robotics.png" alt="robot">
+<div id="robo-div" class="col-12" style="text-align:center;padding:3em;">
+  <img class="img-fluid" id="robot" src="/assets/robotics.png" alt="robot">
 </div>
 
 <div style="text-align:center;" class="col-12">
-<button type="button" class="btn btn-success" style="background:green;border:none;font-size:2em;padding:1.5em;" onclick="window.location.href = window.location.href + 'game.html'" >START</button>
-</div>
-
-<div class="col-12" style="text-align:center;padding:3em;">
-  <img class="img-fluid" id="robot" src="how_to_play.png" height="300px" alt="robot">
-</div>
-
-<div class="col-12" style="text-align:center;padding:3em;">
-  <img class="img-fluid" id="robot" src="camera_instructions_2.png" height="300px" alt="robot">
-</div>
-
-<div class="col-12" style="text-align:center;padding:3em;">
-  <img class="img-fluid" id="robot" src="how_to_win_2.png" height="300px" alt="robot">
+<button type="button" class="btn btn-success" onclick="window.location.href = window.location.href + 'game.html'" >START</button>
 </div>
 
 

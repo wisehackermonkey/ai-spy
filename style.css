@@ -1,34 +1,34 @@
 @font-face {
   font-family: "Ethnocentric";
-  src: url("ethnocentric.ttf") format("truetype");
+  src: url("/assets/ethnocentric.ttf") format("truetype");
 }
 
 @font-face {
   font-family:"Roboto";
-  src: url("Roboto-Regular.ttf") format("truetype");
+  src: url("/assets/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family:"Roboto Bold";
-  src: url("Roboto-Bold.ttf") format("truetype");
+  src: url("/assets/Roboto-Bold.ttf") format("truetype");
 }
 
 
 html {
   background-color: #33A1DE;
 }
+#list-group-item{
+    font-size: 2em; 
 
-body {
-  background-color: black;
-  color: white;
 }
-
 #label-container {
   font-size: 60px;
   text-align: center;
   font-family: "Roboto";
   background-color: black;
   color: white;
+  margin: 0;
+  width: 100%;
 }
 
 #webcam-container {
@@ -37,7 +37,6 @@ body {
 }
 
 #title {
-  font-size: 60px;
   text-align: center;
   text-transform: uppercase;
   padding: .25em 0;
@@ -45,13 +44,17 @@ body {
   font-family: "Roboto Bold";
   font-weight: bold;
   font-size: 3em;
-  margin-bottom: 1em;
 }
 
 #btn {
   text-align: center;
   margin: 15px;
   padding: 10px;
+}
+
+button {
+  font-size:4em!important;
+  border-radius: 15px!important;
 }
 
 .btn:hover {
@@ -61,7 +64,16 @@ body {
 h1 {
   text-align: center;
   font-family: "Ethnocentric";
-  font-size: 1em;
+  font-size: 2.5em!important;
+  margin: 0;
+  padding: 1em;
+}
+
+h2 {
+  font-family: "Roboto Bold";
+  text-align: center;
+  padding-top: 2em!important;
+  font-size: 2.5em!important;
 }
 
 .list-group {
@@ -71,7 +83,7 @@ h1 {
 
 .list-group li {
   font-family: "Roboto";
-  font-size: 1.5em;
+  font-size: 3.5em;
   text-align: center;
   background: lightgray;
   padding-top: .5em;
@@ -88,16 +100,28 @@ h1 {
 }
 
 .list-icons {
-  width: 1.2em;
-  margin-right: .8em;
+  width: 1.7em;
+  margin-left: .8em;
+  height: 100px;
+  width: 100px;
+
 }
 
 .list-icons img {
   display: inline;
 }
 
-#ready-blurb {
-  text-align: center;
-  font-size: 1.5em;
+.how-to img{
+  width: 100%;
+
 }
 
+.blue-back {
+  background: #33A1DE;
+}
+
+  @media only screen and (max-width: 767px) {
+    canvas {
+      width: 100%;
+    }
+  }
