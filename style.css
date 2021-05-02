@@ -128,19 +128,21 @@ h2 {
 }
 
 .footer {
-  background: lightgray;
+  background-color: #33A1DE;
   margin-top: 4em;
   text-align: center;
 }
 
 .footer a {
   color: black;
+  background-color: #33A1DE;
   font-family: "Roboto";
   font-size: 1.5em;
+  text-decoration: none;
 }
 
 .footer a:hover {
-  color: #33A1DE;
+  color: white;
   text-decoration: none;
 }
 
