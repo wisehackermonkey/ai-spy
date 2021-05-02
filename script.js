@@ -101,7 +101,7 @@ async function init() {
 
       start_time -=1
       let el = document.getElementById('timer')
-      el.innerText = start_time
+      el.innerText = `Time Remaining 0:${start_time}`
 
       //  here is where we check if the user has collected all the items
       // and has won the game
@@ -110,6 +110,8 @@ async function init() {
           let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
           win_sound_fx.play();      
           console.log("game has been won!")
+                  document.getElementById("show-confetti").style.background = "green"
+
           let timer2 = 5
           let stop_confetti = setInterval(e => {
               party.confetti(document.getElementById("btn"));
@@ -124,9 +126,13 @@ async function init() {
 
       }
       // if the user doesnt collect the items befor the timer runs out
-      if(start_time <= 0){
+      if(start_time <= 0 && game_is_won === false){
         clearInterval(timer);
-        alert("game lost!")
+        document.getElementById("show-confetti").style.background = "red"
+        alert("Try Again?");
+        setTimeout(e=>{
+            window.location.reload(true); 
+        },1000)
       }
     }, 1000)
 
