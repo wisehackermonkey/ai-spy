@@ -17,18 +17,21 @@
   text-align: center;
   padding: .25em 0;
   background: lightgray;
+}
+
+.title-name {
   font-family: "Zen Dots";
   font-weight: bold;
   font-size: 1.4em;
+  white-space: nowrap;
 }
 
-  
 h3 {
   font-family: "Roboto";
 }
 
 .btn a{
-   font-family: "Roboto";
+  font-family: "Roboto";
   font-weight: bold;
 }
 
@@ -113,6 +116,10 @@ h3 {
   @media only screen and (max-width: 767px) {
     #robot {
       width: 100%;
+    }
+
+    .tite-name {
+      font-size: 1em;
     }
   }
 

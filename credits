@@ -9,10 +9,6 @@
 	 crossorigin="anonymous">
 
   <style>
-  @font-face {
-  font-family: "Ethnocentric";
-  src: url("/assets/ethnocentric.ttf") format("truetype");
-}
 
   body {
     text-align: center;
@@ -27,10 +23,6 @@
   }
   </style>
 
-  #ethno {
-    font-family: "Ethnocentric";
-  }
-
 </head>
 
 
@@ -39,6 +31,14 @@
 
 <div class="col-12" id="icons-attr">
 <h1>Credits</h1>
+
+<h2>Website created by:</h2>
+<ul>
+<li>Oran Collins</li>
+<li>Celeste Maldonado</li>
+<li>Valerie Barreto<li> 
+</ul> 
+
 <h2>Images</h2>
 <ul>
   <li><img src="/assets/robotics.png" alt="Robot"></a> by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
@@ -46,11 +46,17 @@
   <li><img src="/assets/sceptic.png" alt="not amused face"></a> by <a href="https://www.flaticon.com/authors/smartline">Smartline</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
   <li><img src="/assets/loupe.png" alt="magnifying glass"></a> by <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 </li>
+  <li><img src="/assets/shoe.png" alt="shoe"></a> by <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+</li>
+ <li><img src="/assets/trophy.png" alt="trophy"></a> by <a href="https://www.deviantart.com/papillonstudio">Papillonstudio</a> from <a href="https://www.deviantart.com/" title="deviantart">www.deviantart.com</a>
+</li>
 </ul>
 
 <h2>Fonts</h2>
 <ul>
-<li><span id="ethno">Ethnocentric<span> from <a href="https://www.dafont.com/ethnocentric.font">DaFonts</a></li>
+<li>Ethnocentric from <a href="https://www.dafont.com/ethnocentric.font">DaFonts</a></li>
+<li>Zen Dots from <a href="https://fonts.google.com/specimen/Zen+Dots">Google Fonts</a></li>
+<li>Roboto from <a href="https://fonts.google.com/specimen/Zen+Dots">Google Fonts</a></li>
 </ul>
 
 </div>
