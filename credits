@@ -9,6 +9,11 @@
 	 crossorigin="anonymous">
 
   <style>
+  @font-face {
+  font-family: "Ethnocentric";
+  src: url("/assets/ethnocentric.ttf") format("truetype");
+}
+
   body {
     text-align: center;
   }
@@ -21,6 +26,10 @@
     list-style: none;
   }
   </style>
+
+  #ethno {
+    font-family: "Ethnocentric";
+  }
 
 </head>
 
@@ -41,7 +50,7 @@
 
 <h2>Fonts</h2>
 <ul>
-<li>Ethnocentric from <a>DaFonts</a></li>
+<li><span id="ethno">Ethnocentric<span> from <a href="https://www.dafont.com/ethnocentric.font">DaFonts</a></li>
 </ul>
 
 </div>
