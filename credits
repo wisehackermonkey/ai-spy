@@ -22,6 +22,8 @@
   }
   </style>
 
+  
+
 </head>
 
 
@@ -41,7 +43,7 @@
 
 <h2>Fonts</h2>
 <ul>
-<li>Ethnocentric from <a>DaFonts</a></li>
+<li><span id="ethno">Ethnocentric<span> from <a href="https://www.dafont.com/ethnocentric.font">DaFonts</a></li>
 </ul>
 
 </div>
