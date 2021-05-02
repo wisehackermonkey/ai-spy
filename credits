@@ -9,6 +9,11 @@
 	 crossorigin="anonymous">
 
   <style>
+  @font-face {
+  font-family: "Ethnocentric";
+  src: url("/assets/ethnocentric.ttf") format("truetype");
+}
+
   body {
     text-align: center;
   }
@@ -22,7 +27,9 @@
   }
   </style>
 
-  
+  #ethno {
+    font-family: "Ethnocentric";
+  }
 
 </head>
 

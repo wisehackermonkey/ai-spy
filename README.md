@@ -54,7 +54,7 @@
 -----------------
 # Contributors
 
-[![](https://contrib.rocks/image?repo=wisehackermonkey/Ai Spy)](https://github.com/wisehackermonkey/Ai Spy/graphs/contributors)
+[![](https://contrib.rocks/image?repo=wisehackermonkey/ai-spy)](https://github.com/wisehackermonkey/ai-spy/graphs/contributors)
 
 ##### Made with [contributors-img](https://contrib.rocks).
 
