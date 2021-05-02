@@ -54,6 +54,7 @@ h1 {
 
 .list-group {
   border: .25em solid;
+  visibility: hidden;
 }
 
 .list-group li {
@@ -81,4 +82,8 @@ h1 {
 
 .list-icons img {
   display: inline;
+}
+
+#ready-blurb {
+  
 }

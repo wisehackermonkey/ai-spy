@@ -72,7 +72,7 @@ async function init() {
     
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
-
+    document.getElementById("show-hide").style.visibility = "visible"
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
     // or files from your local hard drive
@@ -111,7 +111,7 @@ async function init() {
           win_sound_fx.play();      
           console.log("game has been won!")
                   document.getElementById("show-confetti").style.background = "green"
-
+               window.location.href = window.location.origin + '/win_game.html'
           let timer2 = 5
           let stop_confetti = setInterval(e => {
               party.confetti(document.getElementById("btn"));
