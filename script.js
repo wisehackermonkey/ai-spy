@@ -16,6 +16,7 @@ const current_items = [
 
 // the sound effect for when the user correctly displays the items
 let sound_fx_collect_item = new Audio('tada_1.mp3');
+let sound_fx_clocksound = new Audio('clockticksound-01.mp3');
 
 
 // the timer for the game looks like `14 seconds left!` 
@@ -70,6 +71,8 @@ let is_game_won = ()=>{
 // Load the image model and setup the webcam
 async function init() {
     
+    sound_fx_clocksound.loop = true
+    sound_fx_clocksound.play()
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
     document.getElementById("show-hide").style.visibility = "visible"
@@ -108,7 +111,8 @@ async function init() {
       if(is_game_won() && game_is_won === false){
           game_is_won = true;
           let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
-          win_sound_fx.play();      
+          win_sound_fx.play();   
+          sound_fx_clocksound.pause();   
           console.log("game has been won!")
                   document.getElementById("show-confetti").style.background = "green"
                window.location.href = window.location.origin + '/win_game.html'
