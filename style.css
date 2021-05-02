@@ -49,6 +49,10 @@ html {
   font-size: 3em;
 }
 
+.title-name {
+  white-space: nowrap !important;
+}
+
 #btn {
   text-align: center;
   margin: 15px;
