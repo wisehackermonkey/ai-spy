@@ -71,7 +71,6 @@ let mute_fx = ()=>{
   face_sound_fx.volume = 0.0;
   book_sound_fx.volume = 0.0;
   shoe_sound_fx.volume = 0.0;
-
 }
 // fingure out if the player has won by 
 // checking if they have collected all items they need to find

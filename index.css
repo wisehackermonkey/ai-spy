@@ -13,13 +13,15 @@
   src: url("/assets/ZenDots-Regular.ttf") format("truetype");
 }
 
-.title {
+#title {
+  text-align: center;
+  padding: .25em 0;
+  background: lightgray;
   font-family: "Zen Dots";
+  font-weight: bold;
+  font-size: 1.4em;
 }
 
-#title {
-  font-family:"Roboto Bold";
-}
   
 h3 {
   font-family: "Roboto";

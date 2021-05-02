@@ -42,16 +42,11 @@ html {
 
 #title {
   text-align: center;
-  text-transform: uppercase;
   padding: .25em 0;
   background: lightgray;
-  font-family: "Roboto Bold";
+  font-family: "Zen Dots";
   font-weight: bold;
   font-size: 3em;
-}
-
-.title {
-  font-family: "Zen Dots";
 }
 
 #btn {
