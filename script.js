@@ -54,14 +54,14 @@ let cross_off_item = (item_name) => {
 let is_game_won = ()=>{
   let has_won = true
   // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-// check to see if there are ANY false in current_items[X].show and if there is return 
-// false (not win) if they are all true return true (means win)
-// true && true = true (game has been won)
-// true && false =false (game has not been won)
-// false && false = false (game has not been won)
+  // check to see if there are ANY false in current_items[X].show and if there is return 
+  // false (not win) if they are all true return true (means win)
+  // true && true = true (game has been won)
+  // true && false =false (game has not been won)
+  // false && false = false (game has not been won)
 
-// this logic is slightly conveluted, its saying if any of the items are false, 
-// then return the opposit
+  // this logic is slightly conveluted, its saying if any of the items are false, 
+  // then return the opposit
   return !current_items.some((item)=>{
     return  item.show === false
   })
