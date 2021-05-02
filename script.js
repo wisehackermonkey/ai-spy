@@ -9,9 +9,9 @@ let model, webcam, labelContainer, maxPredictions;
 // global list of current items the user has to find
 // example of one item {name:"book",show:true}
 const current_items = [
-  {name:"face",show:true},
-  {name:"book",show:true},
-  {name:"shoe",show:true},
+  {name:"face",show:false},
+  {name:"book",show:false},
+  {name:"shoe",show:false},
   ]
 
 // the sound effect for when the user correctly displays the items
@@ -19,8 +19,11 @@ let sound_fx_collect_item = new Audio('tada_1.mp3');
 
 
 // the timer for the game looks like `14 seconds left!` 
-let start_time;
+let start_time = 30;
 
+
+// used to allow the win sound effect to only play once 
+let game_is_won = false;
 
 // cross off found items 
 let cross_off_item = (item_name) => {
@@ -30,23 +33,39 @@ let cross_off_item = (item_name) => {
   let sucess = false;
 
   current_items.forEach(e => {
-      if(e.name === item_name && e.show === true){
+      if(e.name === item_name && e.show === false){
         
-        current_items[index].show = false;
+        current_items[index].show = true;
         console.log(`Crossed Off ${item_name}, Name= ${e.name}`)
         // actually cross of the element in the list
         let el = document.getElementById(e.name)
         el.style.textDecoration = "line-through"
         sucess = true;
       }else{
-          console.log(`Didnt cross Off  ${item_name}`)
+          // console.log(`Didnt cross Off  ${item_name}`)
         
       }
   })
   return sucess;
 }
 
+// fingure out if the player has won by 
+// checking if they have collected all items they need to find
+let is_game_won = ()=>{
+  let has_won = true
+  // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+// check to see if there are ANY false in current_items[X].show and if there is return 
+// false (not win) if they are all true return true (means win)
+// true && true = true (game has been won)
+// true && false =false (game has not been won)
+// false && false = false (game has not been won)
 
+// this logic is slightly conveluted, its saying if any of the items are false, 
+// then return the opposit
+  return !current_items.some((item)=>{
+    return  item.show === false
+  })
+}
 
 // Load the image model and setup the webcam
 async function init() {
@@ -75,8 +94,41 @@ async function init() {
         labelContainer.appendChild(document.createElement("div"));
     }
 
-          // run the main part of the code
 
+    //run the game timer from here
+    // this will count down to 0 from start_time which is currently 30 seconds
+    let timer = setInterval(e => {
+
+      start_time -=1
+      let el = document.getElementById('timer')
+      el.innerText = start_time
+
+      //  here is where we check if the user has collected all the items
+      // and has won the game
+      if(is_game_won() && game_is_won === false){
+          game_is_won = true;
+          let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
+          win_sound_fx.play();      
+          console.log("game has been won!")
+          let timer2 = 5
+          let stop_confetti = setInterval(e => {
+              party.confetti(document.getElementById("btn"));
+              party.confetti(document.getElementById("title"));
+              party.confetti(document.getElementById("webcam-container"));
+              party.confetti(document.getElementById("show-confetti"));
+              timer2-=1
+              if(timer2 <= 0){
+              clearInterval(stop_confetti)
+              }
+           }, 1000)
+
+      }
+      // if the user doesnt collect the items befor the timer runs out
+      if(start_time <= 0){
+        clearInterval(timer);
+        alert("game lost!")
+      }
+    }, 1000)
 
 
 }

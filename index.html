@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HackJam 2021</title>
     <link rel="icon" href="/assets/magnifying-glass.jpg" type="image/png">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- <link href="game_style.css" rel="stylesheet" type="text/css" /> -->
   </head>
 
-  <body>
-    <div id="title">AI Spy <img src="/assets/magnifying-glass.png" alt="magnifying-glass icon"></div>
+  <body id="show-confetti">
+    <div id="title">AI Spy <img class="img-fluid" src="/assets/magnifying-glass.png" alt="magnifying-glass icon" width="80" height="80"></div>
     
     <div id="btn">
       <button type="button" class="btn btn-success" onclick="init()">Start</button>
@@ -19,7 +19,7 @@
 
     <div class="container-fluid">
         <div class="row justify-content-evenly">
-    <div class="col-5">
+    <div id="list-box" class="col-5">
       <h1>Can You Find?</h1>
       <ul class="list-group">
         <li class="list-group-item" id="face">A Face</li>
@@ -27,7 +27,7 @@
         <li class="list-group-item" id="shoe">A Shoe</li>
       </ul>
     </div>
-    <div id="webcam-container" class="col-6"><h3>Timer 0:00</h3></div>
+    <div id="webcam-container" class="col-6"><h3 id="timer"><img class="img-fluid" src="/assets/timer.png" alt="timer icon" width="30" height="30"> Time 0:00</h3></div>
   </div>
 
   <div id="label-container"></div>
@@ -40,6 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
      <!--  used for confetti in when the user wins-->
+     <!-- https://www.cssscript.com/confetti-animation-party/ -->
      <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 
     <script src="script.js" type="text/javascript"></script>

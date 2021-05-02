@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("ethnocentric.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"Roboto";
+  src: url("Roboto-Regular.ttf") format("truetype");
+}
+
+
 html {
   background-color: turquoise;
 }
@@ -10,6 +21,7 @@ body {
 #label-container {
   font-size: 60px;
   text-align: center;
+  font-family: "Roboto";
 }
 
 #webcam-container {
@@ -31,3 +43,22 @@ body {
 .btn:hover {
     transform: scale(.9);
 }
+
+h1 {
+  text-align: center;
+  font-family: "Ethnocentric";
+  font-size: 1em;
+}
+
+.list-group {
+  border: .25em solid;
+}
+
+.list-group li {
+  font-family: "Roboto";
+  font-size: 1.5em;
+  text-align: center;
+  background: lightgray;
+  padding: .5em;
+}
+
