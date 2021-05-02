@@ -17,6 +17,7 @@ const current_items = [
 // the sound effect for when the user correctly displays the items
 let sound_fx_collect_item = new Audio('tada_1.mp3');
 let sound_fx_clocksound = new Audio('clockticksound-01.mp3');
+let sound_fx_fail_sound = new Audio('thepriceisright-loserhorns.mp3');
 
 
 // the timer for the game looks like `14 seconds left!` 
@@ -70,12 +71,13 @@ let is_game_won = ()=>{
 
 // Load the image model and setup the webcam
 async function init() {
-    
     sound_fx_clocksound.loop = true
     sound_fx_clocksound.play()
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
     document.getElementById("show-hide").style.visibility = "visible"
+    document.getElementById("hide-blurb").style.visibility = "hidden"
+
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
     // or files from your local hard drive
@@ -104,7 +106,7 @@ async function init() {
 
       start_time -=1
       let el = document.getElementById('timer')
-      el.innerText = `0:${start_time}`
+      el.innerHTML = `<img class="img-fluid" src="/assets/timer.png" alt="timer icon" width="30" height="30"> Time Remaining 0:${start_time}`
 
       //  here is where we check if the user has collected all the items
       // and has won the game
@@ -126,14 +128,21 @@ async function init() {
               clearInterval(timer)
               if(timer2 <= 0){
               clearInterval(stop_confetti)
+              sound_fx_clocksound.pause();   
+
               }
            }, 1000)
 
       }
       // if the user doesnt collect the items befor the timer runs out
       if(start_time <= 0 && game_is_won === false){
+        sound_fx_fail_sound.play();
+        sound_fx_clocksound.pause();   
+
         clearInterval(timer);
+        
         document.getElementById("show-confetti").style.background = "red"
+        
         alert("Try Again?");
         setTimeout(e=>{
             window.location.reload(true); 

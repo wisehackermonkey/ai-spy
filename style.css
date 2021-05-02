@@ -8,9 +8,14 @@
   src: url("Roboto-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family:"Roboto Bold";
+  src: url("Roboto-Bold.ttf") format("truetype");
+}
+
 
 html {
-  background-color: turquoise;
+  background-color: #33A1DE;
 }
 
 body {
@@ -28,12 +33,19 @@ body {
 
 #webcam-container {
   text-align: center;
+  padding-bottom: 2em;
 }
 
 #title {
   font-size: 60px;
   text-align: center;
-  background-color: rgb(248, 248, 248);
+  text-transform: uppercase;
+  padding: .25em 0;
+  background: lightgray;
+  font-family: "Roboto Bold";
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: 1em;
 }
 
 #btn {
@@ -88,3 +100,4 @@ h1 {
   text-align: center;
   font-size: 1.5em;
 }
+
