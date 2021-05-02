@@ -3,22 +3,32 @@
   src: url("/assets/Roboto-Bold.ttf") format("truetype");
 }
 
-  @font-face {
+@font-face {
   font-family:"Roboto";
   src: url("/assets/Roboto-Regular.ttf") format("truetype");
 }
-  #title, .title {
-    font-family:"Roboto Bold";
-  }
-  
-  h3 {
-    font-family: "Roboto";
-  }
 
-  .btn a{
-    font-family: "Roboto";
-    font-weight: bold;
-  }
+@font-face {
+  font-family:"Zen Dots";
+  src: url("/assets/ZenDots-Regular.ttf") format("truetype");
+}
+
+.title {
+  font-family: "Zen Dots";
+}
+
+#title {
+  font-family:"Roboto Bold";
+}
+  
+h3 {
+  font-family: "Roboto";
+}
+
+.btn a{
+   font-family: "Roboto";
+  font-weight: bold;
+}
 
 #robot {
   animation-name: wobble-hor-bottom;

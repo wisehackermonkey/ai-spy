@@ -13,8 +13,10 @@
   src: url("/assets/Roboto-Bold.ttf") format("truetype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-
+@font-face {
+  font-family:"Zen Dots";
+  src: url("/assets/ZenDots-Regular.ttf") format("truetype");
+}
 
 html {
   background-color: #33A1DE;

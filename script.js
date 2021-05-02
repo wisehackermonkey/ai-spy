@@ -57,14 +57,21 @@ let cross_off_item = (item_name) => {
 }
 // turn off all the sound effects on the page by pressing the mute button
 let mute_fx = ()=>{
+  sound_fx_collect_item.pause()
+  sound_fx_clocksound.pause()
+  sound_fx_fail_sound.pause()
+  win_sound_fx.pause()
+  face_sound_fx.pause()
+  book_sound_fx.pause()
+  shoe_sound_fx.pause()
+  sound_fx_collect_item.volume = 0.0;
+  sound_fx_clocksound.volume = 0.0;
+  sound_fx_fail_sound.volume = 0.0;
+  win_sound_fx.volume = 0.0;
+  face_sound_fx.volume = 0.0;
+  book_sound_fx.volume = 0.0;
+  shoe_sound_fx.volume = 0.0;
 
-sound_fx_collect_item.pause()
-sound_fx_clocksound.pause()
-sound_fx_fail_sound.pause()
-win_sound_fx.pause()
-face_sound_fx.pause()
-book_sound_fx.pause()
-shoe_sound_fx.pause()
 }
 // fingure out if the player has won by 
 // checking if they have collected all items they need to find
