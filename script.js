@@ -16,10 +16,16 @@ const current_items = [
 
 // the sound effect for when the user correctly displays the items
 let sound_fx_collect_item = new Audio('tada_1.mp3');
+let sound_fx_clocksound = new Audio('clockticksound-01.mp3');
+let sound_fx_fail_sound = new Audio('thepriceisright-loserhorns.mp3');
+let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3");
+let face_sound_fx  = new Audio("face.wav");
+let book_sound_fx  = new Audio("book.wav");
+let shoe_sound_fx  = new Audio("shoe.wav");
 
 
 // the timer for the game looks like `14 seconds left!` 
-let start_time = 30;
+let start_time = 59;
 
 
 // used to allow the win sound effect to only play once 
@@ -40,6 +46,7 @@ let cross_off_item = (item_name) => {
         // actually cross of the element in the list
         let el = document.getElementById(e.name)
         el.style.textDecoration = "line-through"
+        el.style.textDecorationThickness = ".2em"
         sucess = true;
       }else{
           // console.log(`Didnt cross Off  ${item_name}`)
@@ -48,20 +55,37 @@ let cross_off_item = (item_name) => {
   })
   return sucess;
 }
+// turn off all the sound effects on the page by pressing the mute button
+let mute_fx = ()=>{
+  sound_fx_collect_item.pause()
+  sound_fx_clocksound.pause()
+  sound_fx_fail_sound.pause()
+  win_sound_fx.pause()
+  face_sound_fx.pause()
+  book_sound_fx.pause()
+  shoe_sound_fx.pause()
+  sound_fx_collect_item.volume = 0.0;
+  sound_fx_clocksound.volume = 0.0;
+  sound_fx_fail_sound.volume = 0.0;
+  win_sound_fx.volume = 0.0;
+  face_sound_fx.volume = 0.0;
+  book_sound_fx.volume = 0.0;
+  shoe_sound_fx.volume = 0.0;
 
+}
 // fingure out if the player has won by 
 // checking if they have collected all items they need to find
 let is_game_won = ()=>{
   let has_won = true
   // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
-// check to see if there are ANY false in current_items[X].show and if there is return 
-// false (not win) if they are all true return true (means win)
-// true && true = true (game has been won)
-// true && false =false (game has not been won)
-// false && false = false (game has not been won)
+  // check to see if there are ANY false in current_items[X].show and if there is return 
+  // false (not win) if they are all true return true (means win)
+  // true && true = true (game has been won)
+  // true && false =false (game has not been won)
+  // false && false = false (game has not been won)
 
-// this logic is slightly conveluted, its saying if any of the items are false, 
-// then return the opposit
+  // this logic is slightly conveluted, its saying if any of the items are false, 
+  // then return the opposit
   return !current_items.some((item)=>{
     return  item.show === false
   })
@@ -69,9 +93,14 @@ let is_game_won = ()=>{
 
 // Load the image model and setup the webcam
 async function init() {
-    
+    sound_fx_clocksound.loop = true
+    sound_fx_clocksound.play()
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
+    document.getElementById("show-hide").style.visibility = "visible"
+  
+    document.getElementById("hide-blurb").innerHTML = "<br>";
+
 
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
@@ -101,35 +130,52 @@ async function init() {
 
       start_time -=1
       let el = document.getElementById('timer')
-      el.innerText = `0:${start_time}`
+      // This is a gross hack to fix the html issue where the timer removes the image of the timer!
+      // im maunually adding it each time i write a new time value
+      el.innerHTML = `<img class="img-fluid" src="/assets/timer.png" alt="timer icon" width="30" height="30"> Time Remaining 0:${start_time}`
 
       //  here is where we check if the user has collected all the items
       // and has won the game
       if(is_game_won() && game_is_won === false){
           game_is_won = true;
-          let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
-          win_sound_fx.play();      
+          // play a win noise
+          win_sound_fx.play();
+          // stop the anoying clock ticking noise  
+          sound_fx_clocksound.pause();   
           console.log("game has been won!")
-                  document.getElementById("show-confetti").style.background = "green"
+          //display a green color in background so the user knows they have one!
+          document.getElementById("show-confetti").style.background = "green"
+          //load the win state page to give the player a visual reward
+          window.location.href = window.location.origin + '/win_game.html'
 
           let timer2 = 5
           let stop_confetti = setInterval(e => {
+              //every 1 second show some confetti as a selbration 
               party.confetti(document.getElementById("btn"));
               party.confetti(document.getElementById("title"));
               party.confetti(document.getElementById("webcam-container"));
               party.confetti(document.getElementById("show-confetti"));
+              
+              // another gross hack to stop the timer 
               timer2-=1
               clearInterval(timer)
               if(timer2 <= 0){
               clearInterval(stop_confetti)
+              sound_fx_clocksound.pause();   
+
               }
            }, 1000)
 
       }
       // if the user doesnt collect the items befor the timer runs out
       if(start_time <= 0 && game_is_won === false){
+        sound_fx_fail_sound.play();
+        sound_fx_clocksound.pause();   
+
         clearInterval(timer);
+        
         document.getElementById("show-confetti").style.background = "red"
+        
         alert("Try Again?");
         setTimeout(e=>{
             window.location.reload(true); 
@@ -151,17 +197,30 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
-            "You found a " + prediction[i].className + "!";
+            "I spy a " + prediction[i].className + "!";
         
         const item_name_found = prediction[i].className
 
         if (prediction[i].probability.toFixed(2)>0.97){
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
+      
+
             // this code crosses off all items that the user is displaying
             if(cross_off_item(item_name_found)){
                 sound_fx_collect_item.play();
                 party.confetti(document.getElementById(item_name_found));
+                if(item_name_found == "face"){
+                  face_sound_fx.play();
+                }
+
+                 if(item_name_found == "book"){
+                  book_sound_fx.play();
+                }
+
+                if(item_name_found == "shoe"){
+                  shoe_sound_fx.play();
+                }
             }
 
         } else {

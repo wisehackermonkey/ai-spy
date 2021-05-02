@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HackJam 2021</title>
-    <link rel="icon" href="/assets/magnifying-glass.jpg" type="image/png">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="game_style.css" rel="stylesheet" type="text/css" /> -->
-  </head>
 
-  <body id="show-confetti">
-    <div id="title">AI Spy <img class="img-fluid" src="/assets/magnifying-glass.png" alt="magnifying-glass icon" width="80" height="80"></div>
-    
-    <div id="btn">
-      <button type="button" class="btn btn-success" onclick="init()">Start</button>
-    </div>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HackJam 2021</title>
+	<link rel="icon" href="/assets/loupe.png" type="image/png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css" type="text/css" />
 
+</head>
 
-    <div class="container-fluid">
-        <div class="row justify-content-evenly">
-    <div id="list-box" class="col-5">
-      <h1>Can You Find?</h1>
-      <ul class="list-group">
-        <li class="list-group-item" id="face"><img src="sceptic.png" alt="face" class="list-icons">A Face</li>
-        <li class="list-group-item" id="book"><img src="book-of-black-cover-closed.png" alt="book" class="list-icons">A Book</li>
-        <li class="list-group-item" id="shoe"><img src="shoe.png" alt="shoe" class="list-icons">A Shoe</li>
-      </ul>
-    </div>
-    <div id="webcam-container" class="col-6">
-      <div id="timer">
-      <img class="img-fluid" src="/assets/timer.png" alt="timer icon" width="30" height="30"> Time Remaining 0:00
-       </div>
-       </div>
+<body>
+	<div id="title">
+		<div class="row title"><img class="img-fluid" id="magnifying" src="/assets/loupe.png" alt="magnifying glass"><span class="title"> Ai SPY<span>
   </div>
+</div>
 
-  <div id="label-container"></div>
+<div class="container">
+<h3>Welcome to AI Spy: The Scavenger Hunt. We use AI to identify if you find the items on the scavenger list!</h3>
+</div>
 
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <!-- Tensor Flow javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<div id="robo-div" class="col-12" style="text-align:center;padding:3em;">
+  <img class="img-fluid" id="robot" src="/assets/robotics.png" alt="robot">
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<div style="text-align:center;" class="col-12">
+<button type="button" class="btn btn-success" onclick="window.location.href = window.location.href + 'game.html'" >START</button>
+</div>
 
-     <!--  used for confetti in when the user wins-->
-     <!-- https://www.cssscript.com/confetti-animation-party/ -->
-     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+<div class="col-12 footer">
+  <a href="credits">Credits</a>
+</div>
 
-    <script src="script.js" type="text/javascript"></script>
-  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- <img src="https://requestbin.net/r/3oa3vc2k"> -->
+</body>
 </html>
