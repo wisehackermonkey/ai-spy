@@ -13,6 +13,8 @@
   src: url("/assets/Roboto-Bold.ttf") format("truetype");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
 
 html {
   background-color: #33A1DE;
@@ -44,6 +46,10 @@ html {
   font-family: "Roboto Bold";
   font-weight: bold;
   font-size: 3em;
+}
+
+.title {
+  font-family: "Zen Dots";
 }
 
 #btn {
@@ -118,6 +124,23 @@ h2 {
 
 .blue-back {
   background: #33A1DE;
+}
+
+.footer {
+  background: lightgray;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.footer a {
+  color: black;
+  font-family: "Roboto";
+  font-size: 1.5em;
+}
+
+.footer a:hover {
+  color: #33A1DE;
+  text-decoration: none;
 }
 
   @media only screen and (max-width: 767px) {

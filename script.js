@@ -18,9 +18,10 @@ const current_items = [
 let sound_fx_collect_item = new Audio('tada_1.mp3');
 let sound_fx_clocksound = new Audio('clockticksound-01.mp3');
 let sound_fx_fail_sound = new Audio('thepriceisright-loserhorns.mp3');
-let face_sound_fx  = new Audio("face.wav")
-let book_sound_fx  = new Audio("book.wav")
-let shoe_sound_fx  = new Audio("shoe.wav")
+let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3");
+let face_sound_fx  = new Audio("face.wav");
+let book_sound_fx  = new Audio("book.wav");
+let shoe_sound_fx  = new Audio("shoe.wav");
 
 
 // the timer for the game looks like `14 seconds left!` 
@@ -54,8 +55,16 @@ let cross_off_item = (item_name) => {
   })
   return sucess;
 }
+// turn off all the sound effects on the page by pressing the mute button
 let mute_fx = ()=>{
-  
+
+sound_fx_collect_item.pause()
+sound_fx_clocksound.pause()
+sound_fx_fail_sound.pause()
+win_sound_fx.pause()
+face_sound_fx.pause()
+book_sound_fx.pause()
+shoe_sound_fx.pause()
 }
 // fingure out if the player has won by 
 // checking if they have collected all items they need to find
@@ -123,7 +132,6 @@ async function init() {
       if(is_game_won() && game_is_won === false){
           game_is_won = true;
           // play a win noise
-          let win_sound_fx = new Audio("victory-mario-series-hq-super-smash-bros.mp3")
           win_sound_fx.play();
           // stop the anoying clock ticking noise  
           sound_fx_clocksound.pause();   
