@@ -101,7 +101,7 @@ async function init() {
 
       start_time -=1
       let el = document.getElementById('timer')
-      el.innerText = `Time Remaining 0:${start_time}`
+      el.innerText = `0:${start_time}`
 
       //  here is where we check if the user has collected all the items
       // and has won the game
@@ -119,6 +119,7 @@ async function init() {
               party.confetti(document.getElementById("webcam-container"));
               party.confetti(document.getElementById("show-confetti"));
               timer2-=1
+              clearInterval(timer)
               if(timer2 <= 0){
               clearInterval(stop_confetti)
               }
