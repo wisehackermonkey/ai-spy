@@ -54,18 +54,18 @@
 -----------------
 # Contributors
 
-[![](https://contrib.rocks/image?repo=wisehackermonkey/ai-spy)](https://github.com/wisehackermonkey/ai-spy/graphs/contributors)
+[![](https://contrib.rocks/image?repo=cmaldon/ai-spy)](https://github.com/cmaldon/ai-spy/graphs/contributors)
 
 ##### Made with [contributors-img](https://contrib.rocks).
 
 -----------------
 # License
-#### MIT © wisehackermonkey
+#### MIT © cmaldon
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ```bash
-by oran collins
-github.com/wisehackermonkey
-oranbusiness@gmail.com
+by celeste maldonado
+github.com/cmaldon
+cmaldonado@bearcubs.santarosa.edu
 ______________________
 ``` 
 
