@@ -1,7 +1,6 @@
 # Ai Spy
 ----
-
-A website that uses Artificial Intelligence to play an interactive timed scavenger hunt game using teachable machine technology to detect predefined objects by placing them in front of the webcam.
+Welcome to Ai Spy: The Scavenger Hunt. A website that uses Artificial Intelligence to play an interactive timed scavenger hunt game using teachable machine technology to identify objects by placing them in front of the webcam.
 
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
