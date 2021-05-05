@@ -10,24 +10,12 @@ Welcome to Ai Spy: The Scavenger Hunt. A website that uses Artificial Intelligen
 <!-- <h4 align="center">________________________</h4> -->
 
 
-# Quick start
-### __________________
-<!-- 
-##### __________________________
-```bash
-``` 
--->
 
 # Summary
 ### -  *[Contributors](#Contributors)*
 ### -  *[License](#License)*
 
 
-
-
-# Installation
-```bash
-```
 -----------------
 # Screenshots
 #### Progress images
@@ -44,14 +32,6 @@ Welcome to Ai Spy: The Scavenger Hunt. A website that uses Artificial Intelligen
 <img src="https://i.imgur.com/Vmy3Ugq.png" width="400"> 
 
 
-
-
-<!-- SETUP -->
------------------
-# For developers
-### 
-```bash
-```
 
 -----------------
 # Contributors
