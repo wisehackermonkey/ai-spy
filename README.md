@@ -53,7 +53,7 @@
 
 -----------------
 # Contributors
-
+# Slides: https://docs.google.com/presentation/d/1sfh1wLlv-MlUO0UaMd5tv0GnUVsrwICeurOCaRfmfUg/edit?usp=sharing
 [![](https://contrib.rocks/image?repo=wisehackermonkey/ai-spy)](https://github.com/wisehackermonkey/ai-spy/graphs/contributors)
 
 ##### Made with [contributors-img](https://contrib.rocks).
