@@ -42,7 +42,7 @@ https://book-face-or-shoe.northwind.repl.co/
 
 
 
-# Author
+# Contributors
 <table class="example1" style="background-color:transparent;border-collapse:collapse; amrgin:auto;">
   <tr>
     <td style="border:1px solid black;padding:7px;width:50%;text-align:center;">
@@ -53,12 +53,8 @@ https://book-face-or-shoe.northwind.repl.co/
   </tr>
 </table>
 
-----
-
-
-# Contributors
-
 [![](https://contrib.rocks/image?repo=cmaldon/ai-spy)](https://github.com/cmaldon/ai-spy/graphs/contributors)
+
 
 <h3>Thank you</h3>
 
