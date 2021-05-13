@@ -25,6 +25,8 @@ https://book-face-or-shoe.northwind.repl.co/
 
 # Screenshots
 #### Progress images
+<img width="514" alt="ai-spy-home" src="https://user-images.githubusercontent.com/69225402/118157197-1bbe7180-b3cf-11eb-8f26-c5dc8b1965ce.png">
+
 <img src="https://i.imgur.com/YSfTDlc.png" width="400"> 
 
 <img src="https://i.imgur.com/LkMuVnc.png" width="400"> 
